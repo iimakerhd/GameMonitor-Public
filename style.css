@@ -1,0 +1,91 @@
+/* GameMonitor public pages - one small stylesheet for index.html, privacy.html and terms.html */
+:root {
+  --bg: #0b2227;
+  --panel: #10303a;
+  --raised: #163f4a;
+  --line: #2b5864;
+  --gold: #ffb224;
+  --text: #e4f0ee;
+  --muted: #9ab7ba;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+a { color: var(--gold); }
+a:hover { color: #ffd27a; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+.wrap { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+.site-header { background: var(--panel); border-bottom: 1px solid var(--line); }
+.site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding-top: 14px; padding-bottom: 14px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 19px; color: var(--text); text-decoration: none; }
+.brand-mark { width: 16px; height: 16px; border: 2px solid var(--gold); position: relative; display: inline-block; }
+.brand-mark::after { content: ""; position: absolute; inset: 3px; background: var(--gold); }
+.site-nav { display: flex; flex-wrap: wrap; gap: 4px 20px; font-size: 15px; }
+.site-nav a { color: var(--muted); text-decoration: none; }
+.site-nav a:hover { color: var(--text); }
+
+.hero { padding: 56px 0 32px; }
+.hero h1 { margin: 0 0 12px; font-size: clamp(30px, 5vw, 44px); line-height: 1.15; }
+.hero p { margin: 0 0 20px; max-width: 680px; font-size: 18px; color: var(--muted); }
+
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  background: var(--gold);
+  color: #1a1204;
+  font-weight: 700;
+  border-radius: 3px;
+  text-decoration: none;
+}
+.button:hover { background: #ffd27a; color: #1a1204; }
+.button.secondary { background: transparent; color: var(--text); border: 1px solid var(--line); }
+.button.secondary:hover { border-color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.small-note { margin-top: 12px; font-size: 14px; color: var(--muted); }
+
+section.block { padding: 28px 0; border-top: 1px solid var(--line); }
+section.block h2 { margin: 0 0 12px; font-size: 24px; }
+section.block h3 { margin: 22px 0 6px; font-size: 18px; }
+section.block p { margin: 0 0 14px; }
+section.block ul, section.block ol { margin: 0 0 14px; padding-left: 22px; }
+section.block li { margin-bottom: 6px; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin: 16px 0; }
+.card { background: var(--panel); border: 1px solid var(--line); border-top: 2px solid var(--gold); border-radius: 3px; padding: 16px; }
+.card h3 { margin: 0 0 6px; font-size: 17px; }
+.card p { margin: 0; font-size: 15px; color: var(--muted); }
+
+table { width: 100%; border-collapse: collapse; margin: 12px 0 18px; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border: 1px solid var(--line); }
+th { background: var(--raised); }
+td code, li code, p code { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 13px; background: var(--raised); padding: 1px 5px; border-radius: 3px; word-break: break-word; }
+.table-wrap { overflow-x: auto; }
+
+.callout { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 3px; padding: 14px 16px; margin: 16px 0; }
+.callout p:last-child { margin-bottom: 0; }
+
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 16px 0; }
+.shots figure { margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 3px; padding: 8px; }
+.shots img { display: block; width: 100%; height: auto; border-radius: 2px; }
+.shots figcaption { margin-top: 6px; font-size: 14px; color: var(--muted); }
+
+.legal-page { padding: 40px 0 24px; }
+.legal-page h1 { margin: 0 0 6px; font-size: 34px; }
+.legal-page .updated { margin: 0 0 24px; color: var(--muted); }
+.legal-page h2 { margin: 28px 0 8px; font-size: 22px; }
+.legal-page p, .legal-page li { margin-bottom: 10px; }
+
+.site-footer { margin-top: 40px; padding: 24px 0 40px; background: var(--panel); border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+.site-footer p { margin: 0 0 10px; }
+.site-footer .footer-links { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-bottom: 14px; }
