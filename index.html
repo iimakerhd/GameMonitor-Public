@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GameMonitor - a free companion app for League of Legends players</title>
+<meta name="description" content="GameMonitor is a free, unofficial companion app for League of Legends. It runs on your own PC and shows a live dashboard for champion select, builds, runes, summoner spells and player profiles.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"></span>GameMonitor</a>
+    <nav class="site-nav" aria-label="Pages">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#riot-data">Riot data</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <h1>A free companion app for League of Legends players</h1>
+    <p>GameMonitor runs on your own PC, next to the League client, and shows a live dashboard in your browser: champion select, builds, runes, summoner spells, player profiles and item suggestions. No ads, no payments, no account.</p>
+    <div class="actions">
+      <a class="button" href="https://github.com/iimakerhd/GameMonitor-Public/releases/latest">Download for Windows</a>
+      <a class="button secondary" href="#how-it-works">See how it works</a>
+    </div>
+    <p class="small-note">GameMonitor is an independent, unofficial project. It is not made, endorsed or supported by Riot Games.</p>
+  </div>
+
+  <section class="block" id="screenshots">
+    <h2>What it looks like</h2>
+    <div class="shots">
+      <figure>
+        <img src="images/champ-select.png" alt="The GameMonitor champion select dashboard" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>Champion select: both teams, bans, timer, runes and summoner spells.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/champion-builds.png" alt="The Champion Builds lookup" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>Champion Builds: items, runes and spells that have been winning.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/player-profile.png" alt="A player profile page" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>Player profile: rank, last 20 games, champions, main role, mastery.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="block" id="features">
+    <h2>Features</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Champion select dashboard</h3>
+        <p>Phase, timer, bans, both rosters, who is hovering what, whose turn it is. Pick, ban and lock in from the dashboard, request trades and swaps, choose a skin, and read or send pregame chat.</p>
+      </div>
+      <div class="card">
+        <h3>Runes and summoner spells</h3>
+        <p>A full rune page editor and a summoner spell picker that only offers the spells that exist in the current game mode.</p>
+      </div>
+      <div class="card">
+        <h3>Champion Builds</h3>
+        <p>Look up any champion and see the items, boots, rune pages and spells that have been winning, by game mode, queue, lane and (in ranked queues) rank. It always shows how many games the numbers come from.</p>
+      </div>
+      <div class="card">
+        <h3>Player profiles</h3>
+        <p>Rank, last 20 games, most played champions, main role and champion mastery for the players in your game, or for any Riot ID you type in.</p>
+      </div>
+      <div class="card">
+        <h3>In-game item suggestions</h3>
+        <p>Ideas for what to buy next, based on your champion, the enemy team's champions and what they have built. They are suggestions, not instructions.</p>
+      </div>
+      <div class="card">
+        <h3>Alerts and missions</h3>
+        <p>Notifications for champ select phases and your turn, a read-only missions panel, and a notice when a low priority queue applies.</p>
+      </div>
+    </div>
+
+    <h3>Automation</h3>
+    <p>GameMonitor can automatically start a queue search and accept a found match. It does this by recognising the on-screen buttons of the League client and clicking them for you; it does not use the League Client API for this. It stops when the League client is closed, pauses itself during a game, and can be paused at any time with the <strong>Pause Automation</strong> button on the dashboard.</p>
+    <p>Everything else that changes something in your client (locking in a champion, setting spells, importing a rune page, trades and swaps, sending a chat message) only happens when you click it on the dashboard.</p>
+
+    <h3>Rocket League</h3>
+    <p>GameMonitor also detects a found match in Rocket League and brings the window to the front. That part does not use any Riot data.</p>
+  </section>
+
+  <section class="block" id="how-it-works">
+    <h2>How it works</h2>
+    <ol>
+      <li><strong>Download and start it.</strong> GameMonitor is a Windows program. Start it, then open the dashboard address it prints in your browser (<code>http://localhost:5000</code> on the same PC).</li>
+      <li><strong>Read the notice.</strong> The first time you open the dashboard you see the disclaimer and a choice about sharing anonymous game statistics. Sharing is off unless you turn it on.</li>
+      <li><strong>Queue as usual.</strong> In the lobby you can look up builds and player profiles. GameMonitor follows the League client's own phases: lobby, search, match found, champion select, in game.</li>
+      <li><strong>Champion select.</strong> The dashboard mirrors champion select and lets you act on it, the same way clicking in the client would.</li>
+      <li><strong>In game.</strong> A scoreboard and item suggestions appear from the local game data.</li>
+      <li><strong>On your phone (optional).</strong> The dashboard also opens on a phone on the same Wi-Fi. Other devices need an access key that is shown on the PC; this PC does not need one.</li>
+    </ol>
+    <div class="callout">
+      <p><strong>Everything runs on your own PC.</strong> GameMonitor reads the League client that is already running on your machine. It does not read game memory, change game files or play the match for you.</p>
+    </div>
+  </section>
+
+  <section class="block" id="riot-data">
+    <h2>Which Riot technologies it uses</h2>
+    <p>We want to be fully open about this, including the parts that Riot does not officially support.</p>
+
+    <h3>1. League Client API (local, not officially supported)</h3>
+    <p>GameMonitor talks to the League client running on the player's own PC through its local API. It uses these endpoint families:</p>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>What for</th><th>Endpoints (local client)</th><th>Read or act</th></tr></thead>
+      <tbody>
+        <tr><td>Client phase and queue</td><td><code>/lol-gameflow/v1/gameflow-phase</code>, <code>/lol-gameflow/v1/session</code></td><td>Read</td></tr>
+        <tr><td>Ready check state</td><td><code>/lol-matchmaking/v1/ready-check</code></td><td>Read</td></tr>
+        <tr><td>Champion select</td><td><code>/lol-champ-select/v1/session</code>, <code>/lol-champ-select/v1/session/timer</code>, <code>/lol-champ-select/v1/skin-carousel-skins</code></td><td>Read</td></tr>
+        <tr><td>Pregame chat</td><td><code>/lol-chat/v1/conversations</code> and its participants and messages</td><td>Read, and send a message when the player writes one</td></tr>
+        <tr><td>Players</td><td><code>/lol-summoner/v1/summoners</code>, <code>/lol-summoner/v1/summoners/names</code>, <code>/lol-summoner/v1/alias/lookup</code>, <code>/lol-summoner/v2/summoners/puuid/{puuid}</code></td><td>Read</td></tr>
+        <tr><td>Profiles and statistics</td><td><code>/lol-ranked/v1/ranked-stats/{puuid}</code>, <code>/lol-match-history/v1/products/lol/{puuid}/matches</code>, <code>/lol-match-history/v1/games/{gameId}</code>, <code>/lol-collections/v1/inventories/{id}/champion-mastery</code></td><td>Read</td></tr>
+        <tr><td>Runes and spells</td><td><code>/lol-perks/v1/styles</code>, <code>/lol-perks/v1/perks</code>, <code>/lol-perks/v1/pages</code>, <code>/lol-perks/v1/currentpage</code>, <code>/lol-perks/v1/inventory</code>, <code>/lol-game-data/assets/v1/summoner-spells.json</code></td><td>Read, and create or edit rune pages when the player saves one</td></tr>
+        <tr><td>Notices</td><td><code>/lol-leaver-buster/v1/*</code> (low priority queue), missions endpoints</td><td>Read</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>When the player clicks something on the dashboard, GameMonitor sends the same request the client would send for that click: hover or lock a champion or ban (<code>/lol-champ-select/v1/session/actions/{id}</code>), change spells or skin (<code>/lol-champ-select/v1/session/my-selection</code>), request or answer a trade or swap (<code>/lol-champ-select/v1/session/trades</code>, <code>position-swaps</code>, <code>pick-order-swaps</code>), swap with the ARAM bench (<code>/session/bench/swap</code>), save a rune page (<code>/lol-perks/v1/pages</code>) and send a chat message. GameMonitor never chooses for the player and only acts when the client says the action is available.</p>
+    <p>We know this API is not officially supported and that Riot may ask us to change or remove any of these uses. We are registering the product so that Riot can review them.</p>
+
+    <h3>2. Live Client Data API (local)</h3>
+    <p>During a match, the in-game scoreboard and the item suggestions use the local Live Client Data API that runs on the player's own PC.</p>
+
+    <h3>3. Data Dragon</h3>
+    <p>Champion, item, rune and spell data and images come from Riot's public Data Dragon.</p>
+
+    <h3>4. Riot Games API (server side only)</h3>
+    <p>A scheduled job on our side builds the shared statistics. With a Riot developer key (kept as a secret, never inside the app) it uses:</p>
+    <ul>
+      <li>League-V4: <code>/lol/league/v4/entries/RANKED_SOLO_5x5/{tier}/{division}</code> and <code>/lol/league/v4/{tier}leagues/by-queue/RANKED_SOLO_5x5</code>, to pick a small sample of ranked players;</li>
+      <li>Match-V5: <code>/lol/match/v5/matches/by-puuid/{puuid}/ids</code> and <code>/lol/match/v5/matches/{matchId}</code>, to read the final items and runes of recent ranked Solo/Duo games.</li>
+    </ul>
+    <p>Only totals are kept (how often each item, rune page and champion appears and wins on Summoner's Rift and ARAM). No player names or ids are kept or published, and no per-player statistics are shown.</p>
+
+    <h3>What GameMonitor does not do</h3>
+    <ul>
+      <li>It does not show ads, sell anything or ask for payment.</li>
+      <li>It does not read or change game memory or files, and it does not play matches for you.</li>
+      <li>It does not look up players whose names the game hides in champion select; they appear under placeholder names.</li>
+      <li>It does not use Riot Sign On and never asks for a Riot password.</li>
+    </ul>
+  </section>
+
+  <section class="block" id="data">
+    <h2>Your data</h2>
+    <p>Nothing leaves your PC unless you turn on sharing. Sharing is optional and off by default; when it is on, GameMonitor sends an anonymous record of each game it reads (champions, roles, results, final items, rune pages, patch and rank tier, never names or account ids) to our statistics server. You can turn it off at any time from the footer of the dashboard.</p>
+    <p>Read the full <a href="privacy.html">Privacy Policy</a> and the <a href="terms.html">Terms of Use</a>.</p>
+  </section>
+
+  <section class="block" id="contact">
+    <h2>Contact and feedback</h2>
+    <p>Questions, bug reports or privacy requests: <a href="https://github.com/iimakerhd/GameMonitor-Public/issues">open an issue on GitHub</a>.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="https://github.com/iimakerhd/GameMonitor-Public/issues">Contact</a>
+      <a href="https://github.com/iimakerhd/GameMonitor-Public/releases/latest">Download</a>
+    </div>
+    <p>GameMonitor is an independent, unofficial tool. It isn't endorsed by, affiliated with or sponsored by any game developer or publisher, and it doesn't reflect the views or opinions of any of them or of anyone officially involved in producing or managing their games. All game names, logos and related properties are trademarks or registered trademarks of their respective owners.</p>
+    <p>GameMonitor isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p>
+    <p>GameMonitor isn't endorsed by Psyonix or Epic Games and doesn't reflect the views or opinions of Psyonix, Epic Games or anyone officially involved in producing or managing Rocket League. Rocket League and all associated properties are trademarks or registered trademarks of Psyonix LLC.</p>
+  </div>
+</footer>
+
+</body>
+</html>
