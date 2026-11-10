@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy - GameMonitor</title>
+<meta name="description" content="How GameMonitor handles data: what stays on your PC, what is shared only if you opt in, and which services it contacts.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"></span>GameMonitor</a>
+    <nav class="site-nav" aria-label="Pages">
+      <a href="./">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap legal-page">
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: November 10, 2026</p>
+
+  <p>GameMonitor is a free, independent hobby project. This page explains what data the app handles, what stays on your PC, what is sent anywhere (only if you choose to), and which outside services are contacted. If anything here is unclear, ask us through <a href="https://github.com/iimakerhd/GameMonitor-Public/issues">GitHub</a>.</p>
+
+  <h2>The short version</h2>
+  <ul>
+    <li>GameMonitor runs on your own PC. There are no accounts and no sign-up.</li>
+    <li>Nothing about your games is sent to us unless you turn sharing on. It is off by default.</li>
+    <li>Shared records never contain player names or account ids.</li>
+    <li>There are no ads, no analytics and no tracking, and we do not sell data.</li>
+  </ul>
+
+  <h2>What stays on your PC</h2>
+  <ul>
+    <li><strong>Data from the League client.</strong> GameMonitor reads the League client running on your PC (your own client state and, as the client shows them, the players in your lobby and game). It shows this in the dashboard.</li>
+    <li><strong>Player profiles and chat.</strong> When you open a player's profile, or champion select shows a roster or chat, the information is shown on the dashboard and kept in the program's memory for a short time (a profile for up to 10 minutes). It is not written to disk and not sent to us.</li>
+    <li><strong>The learning database.</strong> To suggest items, runes and spells, GameMonitor keeps statistics about the games it reads (champions, roles, results, items, runes, spells, patch and rank tier) in a <code>data</code> folder next to the program. This database stays on your PC.</li>
+    <li><strong>Settings.</strong> Your sharing choice, a downloaded copy of the shared statistics, and an access key for other devices (see below) are stored in the same <code>data</code> folder.</li>
+    <li><strong>In your browser.</strong> The dashboard stores a few small settings in your browser's local storage: that you accepted the notice, whether panels are hidden, and your recent player searches. On another device (for example a phone) it also stores a cookie with the access key so you do not have to enter it again; it is kept for up to 90 days.</li>
+  </ul>
+
+  <h2>Optional sharing of anonymous game records</h2>
+  <p>The first time you open the dashboard, you are asked whether you want to share. If you say no, or never answer, nothing is sent. You can change your mind at any time with the switch in the dashboard footer. Turning it off also deletes any records that were still waiting to be sent.</p>
+  <p>If you turn it on, GameMonitor sends one anonymous record for each game it reads. A record contains:</p>
+  <ul>
+    <li>the game's mode, patch, length and the rank tier it was stored with;</li>
+    <li>for each of the players: team, win or loss, champion, role, final items and rune page;</li>
+    <li>the game's region code and numeric game id, which we use only so that the same game is not counted twice. This is a public Riot match id, not an identifier of a person.</li>
+  </ul>
+  <p>A record never contains player names, Riot IDs, account ids or your address. Records are checked on arrival and anything that is not on the list above is discarded.</p>
+  <p>Records are stored on a database hosted on Cloudflare (free plan) and are deleted automatically after 60 days. Because a record is not linked to a person, we cannot find and remove an individual's records on request; they expire on their own, and turning sharing off stops any new ones.</p>
+  <p>To limit abuse, the server keeps a one-way hash of your network address and the date for a daily request limit; it is removed the same day. We do not keep your address.</p>
+
+  <h2>The shared statistics download</h2>
+  <p>GameMonitor downloads a small statistics file (totals of how often items, runes and champions win) from our server on Cloudflare every few hours. Like any web request, this reveals your network address to the server and to Cloudflare, which may log it under its own privacy policy. We do not use it for anything else.</p>
+  <p>That file is built from (a) anonymous records shared by people who opted in and (b) a sample of public ranked games read through the Riot Games API by a scheduled job on our side. For (b) no player names or ids are kept or published; only totals remain.</p>
+
+  <h2>Other services your PC or browser contacts</h2>
+  <ul>
+    <li><strong>Riot Games (Data Dragon and its image servers)</strong> for champion, item, rune and spell data and pictures. Riot sees a normal web request.</li>
+    <li><strong>Google Fonts</strong>, which the dashboard page loads for its fonts. Google sees a normal web request from your browser.</li>
+    <li><strong>Cloudflare</strong>, for the statistics server described above.</li>
+  </ul>
+  <p>The League client's local API and the in-game Live Client Data API run on your own PC; reading them does not send anything over the internet.</p>
+
+  <h2>What we do not do</h2>
+  <ul>
+    <li>We do not show ads, run analytics or build profiles of people.</li>
+    <li>We do not sell or rent data.</li>
+    <li>We do not ask for, receive or store your Riot password. GameMonitor does not use Riot Sign On.</li>
+  </ul>
+
+  <h2>Your choices</h2>
+  <ul>
+    <li>Turn sharing on or off at any time in the dashboard footer.</li>
+    <li>Delete the <code>data</code> folder next to the program to remove the learning database, your sharing choice and the saved access key.</li>
+    <li>Clear your browser's site data for the dashboard to remove the settings it stored.</li>
+    <li>Uninstall by deleting the program's folder.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>GameMonitor is not aimed at children, and we do not knowingly collect information from them.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the date at the top changes too. Significant changes will also be announced on the <a href="./">home page</a>.</p>
+
+  <h2>Contact</h2>
+  <p>Questions or requests about privacy: <a href="https://github.com/iimakerhd/GameMonitor-Public/issues">open an issue on GitHub</a>.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="./">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </div>
+    <p>GameMonitor is an independent, unofficial tool. It isn't endorsed by, affiliated with or sponsored by any game developer or publisher, and it doesn't reflect the views or opinions of any of them or of anyone officially involved in producing or managing their games. All game names, logos and related properties are trademarks or registered trademarks of their respective owners.</p>
+    <p>GameMonitor isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p>
+  </div>
+</footer>
+
+</body>
+</html>
