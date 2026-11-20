@@ -81,8 +81,8 @@
       </div>
     </div>
 
-    <h3>Automation</h3>
-    <p>GameMonitor can automatically start a queue search and accept a found match. It does this by recognising the on-screen buttons of the League client and clicking them for you; it does not use the League Client API for this. It stops when the League client is closed, pauses itself during a game, and can be paused at any time with the <strong>Pause Automation</strong> button on the dashboard.</p>
+    <h3>Automation (off by default)</h3>
+    <p>GameMonitor can automatically start a queue search and accept a found match. This is optional and <strong>off every time GameMonitor starts</strong>. It only runs after you turn it on with the <strong>Turn On Automation</strong> button (in the status window, in the system tray menu or on the dashboard), and you can turn it off again at any time. It works by recognising the on-screen buttons of the League client and clicking them for you; it does not use the League Client API for this. It stops when the League client is closed and pauses itself during a game.</p>
     <p>Everything else that changes something in your client (locking in a champion, setting spells, importing a rune page, trades and swaps, sending a chat message) only happens when you click it on the dashboard.</p>
 
     <h3>Rocket League</h3>
@@ -92,7 +92,7 @@
   <section class="block" id="how-it-works">
     <h2>How it works</h2>
     <ol>
-      <li><strong>Download and start it.</strong> GameMonitor is a Windows program. Start it, then open the dashboard address it prints in your browser (<code>http://localhost:5000</code> on the same PC).</li>
+      <li><strong>Download and start it.</strong> GameMonitor is a Windows program. When it starts, a small status window shows the dashboard address and a QR code. Open the address in your browser (<code>http://localhost:5000</code> on the same PC).</li>
       <li><strong>Read the notice.</strong> The first time you open the dashboard you see the disclaimer and a choice about sharing anonymous game statistics. Sharing is off unless you turn it on.</li>
       <li><strong>Queue as usual.</strong> In the lobby you can look up builds and player profiles. GameMonitor follows the League client's own phases: lobby, search, match found, champion select, in game.</li>
       <li><strong>Champion select.</strong> The dashboard mirrors champion select and lets you act on it, the same way clicking in the client would.</li>
@@ -106,7 +106,7 @@
 
   <section class="block" id="riot-data">
     <h2>Which Riot technologies it uses</h2>
-    <p>We want to be fully open about this, including the parts that Riot does not officially support.</p>
+    <p>This section lists every Riot technology GameMonitor uses, including the parts that Riot does not officially support.</p>
 
     <h3>1. League Client API (local, not officially supported)</h3>
     <p>GameMonitor talks to the League client running on the player's own PC through its local API. It uses these endpoint families:</p>
@@ -125,8 +125,8 @@
       </tbody>
     </table>
     </div>
-    <p>When the player clicks something on the dashboard, GameMonitor sends the same request the client would send for that click: hover or lock a champion or ban (<code>/lol-champ-select/v1/session/actions/{id}</code>), change spells or skin (<code>/lol-champ-select/v1/session/my-selection</code>), request or answer a trade or swap (<code>/lol-champ-select/v1/session/trades</code>, <code>position-swaps</code>, <code>pick-order-swaps</code>), swap with the ARAM bench (<code>/session/bench/swap</code>), save a rune page (<code>/lol-perks/v1/pages</code>) and send a chat message. GameMonitor never chooses for the player and only acts when the client says the action is available.</p>
-    <p>We know this API is not officially supported and that Riot may ask us to change or remove any of these uses. We are registering the product so that Riot can review them.</p>
+    <p>When the player clicks something on the dashboard, GameMonitor sends the same request the client would send for that click: hover or lock a champion or ban (<code>/lol-champ-select/v1/session/actions/{id}</code>), change spells or skin (<code>/lol-champ-select/v1/session/my-selection</code>), request or answer a trade or swap (<code>/lol-champ-select/v1/session/trades</code>, <code>position-swaps</code>, <code>pick-order-swaps</code>), swap with the ARAM bench (<code>/session/bench/swap</code>), save a rune page (<code>/lol-perks/v1/pages</code>) and send a chat message. Apart from the optional automation described above, GameMonitor never makes a choice for the player and only sends an action when the client reports that it is available.</p>
+    <p>The League Client API is not an officially supported public API, and Riot may ask us to change or remove any of these uses. The product is being registered with Riot so that these uses can be reviewed.</p>
 
     <h3>2. Live Client Data API (local)</h3>
     <p>During a match, the in-game scoreboard and the item suggestions use the local Live Client Data API that runs on the player's own PC.</p>
@@ -159,7 +159,7 @@
 
   <section class="block" id="contact">
     <h2>Contact and feedback</h2>
-    <p>Questions, bug reports or privacy requests: <a href="https://github.com/iimakerhd/GameMonitor-Public/issues">open an issue on GitHub</a>.</p>
+    <p>Questions, bug reports or privacy requests: <a href="https://github.com/iimakerhd/GameMonitor-Public/issues">open an issue on GitHub</a>. Please do not include personal information in a public issue.</p>
   </section>
 
 </main>
